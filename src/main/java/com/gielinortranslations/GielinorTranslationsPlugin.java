@@ -7,6 +7,7 @@ import net.runelite.api.Client;
 import net.runelite.api.events.GameTick;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
+import net.runelite.client.events.ConfigChanged;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
 
@@ -31,18 +32,22 @@ public class GielinorTranslationsPlugin extends Plugin
 		return configManager.getConfig(GielinorTranslationsConfig.class);
 	}
 
-	static final GielinorTranslations[] translationClasses = {
-			new PharaohsSceptreTranslations(),
-			new GnomeGliderTranslations()
+	GielinorTranslations[] translationClasses = {
+		new PharaohsSceptreTranslations(),
+		new GnomeGliderTranslations()
 	};
 
 	@Subscribe
 	public void onGameTick(GameTick gameTick) {
 		for (GielinorTranslations t : translationClasses) {
-			if (configManager.getConfiguration("gielinortranslations", t.configEnabledKey).equals("true")) {
-				t.setConfig(config);
-				t.translateDialogByWidget(client.getWidget(t.parentDialogWidgetID));
-			}
+			t.onGameTick(client, configManager, config);
+		}
+	}
+
+	@Subscribe
+	public void onConfigChanged(ConfigChanged configChanged) {
+		for (GielinorTranslations t : translationClasses) {
+			t.onConfigChanged(config);
 		}
 	}
 }

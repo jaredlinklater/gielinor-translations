@@ -17,24 +17,24 @@ public class PharaohsSceptreTranslations extends GielinorTranslations {
     public Map<String, Map<GielinorTranslationsConfig.Language, Consumer<GielinorTranslationsWidget>>> getTranslations() {
         return Map.of(
             "Jalsavrah.", Map.of(
-                GielinorTranslationsConfig.Language.ENGLISH, gtw -> updateTextWithOriginal(gtw, "Pyramid Plunder"),
-                GielinorTranslationsConfig.Language.ENGLISH_LITERAL, gtw -> updateTextWithOriginal(gtw, "Tomb of Kings")
+                GielinorTranslationsConfig.Language.ENGLISH, gtw -> gtw.updateTextWithOriginal("Pyramid Plunder"),
+                GielinorTranslationsConfig.Language.ENGLISH_LITERAL, gtw -> gtw.updateTextWithOriginal("Tomb of Kings")
             ),
             "Jaleustrophos.", Map.of(
-                GielinorTranslationsConfig.Language.ENGLISH,  gtw -> updateTextWithOriginal(gtw, "Agility Pyramid"),
-                GielinorTranslationsConfig.Language.ENGLISH_LITERAL, gtw -> updateTextWithOriginal(gtw, "Tomb of the Agile")
+                GielinorTranslationsConfig.Language.ENGLISH,  gtw -> gtw.updateTextWithOriginal("Agility Pyramid"),
+                GielinorTranslationsConfig.Language.ENGLISH_LITERAL, gtw -> gtw.updateTextWithOriginal("Tomb of the Agile")
             ),
             "Jaldraocht.", Map.of(
-                GielinorTranslationsConfig.Language.ENGLISH,  gtw -> updateTextWithOriginal(gtw, "Ancient Pyramid"),
-                GielinorTranslationsConfig.Language.ENGLISH_LITERAL, gtw -> updateTextWithOriginal(gtw, "Tomb of Magic")
+                GielinorTranslationsConfig.Language.ENGLISH,  gtw -> gtw.updateTextWithOriginal("Ancient Pyramid"),
+                GielinorTranslationsConfig.Language.ENGLISH_LITERAL, gtw -> gtw.updateTextWithOriginal("Tomb of Magic")
             ),
             "Jaltevas.", Map.of(
-                GielinorTranslationsConfig.Language.ENGLISH,  gtw -> updateTextWithOriginal(gtw, "Necropolis"),
-                GielinorTranslationsConfig.Language.ENGLISH_LITERAL, gtw -> updateTextWithOriginal(gtw, "Tomb of the Father")
+                GielinorTranslationsConfig.Language.ENGLISH,  gtw -> gtw.updateTextWithOriginal("Necropolis"),
+                GielinorTranslationsConfig.Language.ENGLISH_LITERAL, gtw -> gtw.updateTextWithOriginal("Tomb of the Father")
             ),
             "Nowhere.", Map.of(
-                GielinorTranslationsConfig.Language.ENGLISH,  gtw -> updateTextWithOriginal(gtw, "Nowhere"),
-                GielinorTranslationsConfig.Language.ENGLISH_LITERAL, gtw -> updateTextWithOriginal(gtw, "Nowhere")
+                GielinorTranslationsConfig.Language.ENGLISH,  gtw -> gtw.updateTextWithOriginal("Nowhere"),
+                GielinorTranslationsConfig.Language.ENGLISH_LITERAL, gtw -> gtw.updateTextWithOriginal("Nowhere")
             )
         );
     }
