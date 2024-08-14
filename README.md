@@ -1,1 +1,2 @@
-# gielinor-translations
+# Example
+An example greeter plugin
